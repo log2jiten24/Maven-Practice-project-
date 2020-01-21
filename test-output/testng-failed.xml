@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Demo test]">
-  <listeners>
-    <listener class-name="com.qa.ExtentReportListener.ExtentReportListener"/>
-  </listeners>
-  <test name="Web Page testing (failed)">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.demomavenprojectpractice.com.demomavenpractice.Testngpracticee">
+      <class name="javabasicprogramms.Bootsrapexample">
         <methods>
-          <include name="close"/>
-          <include name="clickontesting"/>
           <include name="launchbrowser"/>
+          <include name="closebrowser"/>
+          <include name="bootstrapdown"/>
         </methods>
-      </class> <!-- com.demomavenprojectpractice.com.demomavenpractice.Testngpracticee -->
+      </class> <!-- javabasicprogramms.Bootsrapexample -->
     </classes>
-  </test> <!-- Web Page testing (failed) -->
-</suite> <!-- Failed suite [Demo test] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

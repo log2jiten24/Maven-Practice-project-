@@ -3,12 +3,13 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="selenium4features.Opennewtab">
+      <class name="javabasicprogramms.Bootsrapexample">
         <methods>
-          <include name="openurlandlogin"/>
           <include name="launchbrowser"/>
+          <include name="closebrowser"/>
+          <include name="bootstrapdown"/>
         </methods>
-      </class> <!-- selenium4features.Opennewtab -->
+      </class> <!-- javabasicprogramms.Bootsrapexample -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
