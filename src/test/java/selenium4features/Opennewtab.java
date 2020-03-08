@@ -73,7 +73,7 @@ public class Opennewtab {
 		
 		driver.findElement(By.id("txtUsername")).sendKeys("Admin");
 		
-		//character sequence 
+		//character sequenc
 		
 		driver.findElement(By.id("txtPassword")).sendKeys("admin123");
 		
