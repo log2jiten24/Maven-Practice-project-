@@ -44,7 +44,7 @@ public class Dockergrid {
 			  //capab.setBrowserName(BrowserType.Chrome());
 			  //WebDriver driver = new RemoteDriver (new URL("http://localhost:4546/wd/hub"),capab);
 			  //driver.get(url);
-			  //driver.close();
+			  driver.close();
 	
 }
 

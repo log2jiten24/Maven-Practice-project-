@@ -3,13 +3,13 @@
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="javabasicprogramms.Bootsrapexample">
+      <class name="com.demomavenprojectpractice.com.demomavenpractice.Testngpracticee">
         <methods>
+          <include name="close"/>
+          <include name="clickontesting"/>
           <include name="launchbrowser"/>
-          <include name="closebrowser"/>
-          <include name="bootstrapdown"/>
         </methods>
-      </class> <!-- javabasicprogramms.Bootsrapexample -->
+      </class> <!-- com.demomavenprojectpractice.com.demomavenpractice.Testngpracticee -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
