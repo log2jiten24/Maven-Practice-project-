@@ -25,6 +25,7 @@ public class Fakerclass {
 		String firstname = fake.address().firstName();
 		
 		System.out.println ("first name :"+ firstname);
+		//display first name
 		
 	}
 
