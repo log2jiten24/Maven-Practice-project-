@@ -27,6 +27,8 @@ public class Fakerclass {
 		System.out.println ("first name :"+ firstname);
 		//display first name
 		
+		
+		
 	}
 
 }
