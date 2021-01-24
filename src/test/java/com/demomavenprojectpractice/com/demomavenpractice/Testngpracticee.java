@@ -2,6 +2,8 @@ package com.demomavenprojectpractice.com.demomavenpractice;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,10 +13,16 @@ import org.testng.annotations.Test;
 
 import functionlibrary.*;
 
-public class Testngpracticee {
 
-	static WebDriver driver ;
+
+public class Testngpracticee {
+	
+	static final Logger logger = Logger.getLogger(Testngpracticee.class);
+	
+    static WebDriver driver ;
 	String baseUrl = "https://www.google.co.in/";
+	
+	 
 	
 	@BeforeTest ( description = "launching of browser")
 	public void launchbrowser () {
@@ -26,11 +34,14 @@ public class Testngpracticee {
 		driver.manage().window().maximize(); 	
 		
 	}
+	
 	@Test (priority = 1 , description = "open the url" , enabled = true)
 	public void openurl() throws Exception 
 	{
 	//launching the url	
 	driver.get(baseUrl);	
+	
+	logger.info("URL Launched successfully");
     //take the screenshot of url opened
 	Reusablefunctionss.capturescreenshot(driver, "Googlepageopened");
 	
@@ -38,10 +49,12 @@ public class Testngpracticee {
 	
 	}
 	
-	@Test (priority = 2 ,description = "search of testing ",enabled = true)
+	@Test (priority = 2 ,description = "search of testing ",enabled = true,dependsOnMethods= "openurl")
 	public void clickurl () {
 	//type the keyword
-	driver.findElement(By.xpath("//input[@title='Search']")).sendKeys("Testing");
+	driver.findElement(By.xpath("//input[@title='Search']")).sendKeys("Testing"); 
+	
+	logger.info("Input Entered");
 	//implicit wait 
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	//capturescreenshot
@@ -61,6 +74,8 @@ public class Testngpracticee {
 //	   items.click();
 //	   //takescreenshot for the testing definition to be clicked
     driver.findElement(By.xpath("//b[contains(text(),'jobs in pun')]")).click();
+    
+    logger.info("Input value clicked ");
     Reusablefunctionss.capturescreenshot(driver, "click done successfully");
     
 	System.out.println ("Screenshot captured while typing testing");   

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="password" value="admin123"/>
+  <parameter name="username" value="Admin"/>
   <test name="Test(failed)">
     <classes>
-      <class name="com.demomavenprojectpractice.com.demomavenpractice.Testngpracticee">
+      <class name="com.demomavenprojectpractice.com.demomavenpractice.TestNGXMLParameters">
         <methods>
           <include name="close"/>
-          <include name="clickontesting"/>
           <include name="launchbrowser"/>
+          <include name="clickurl"/>
         </methods>
-      </class> <!-- com.demomavenprojectpractice.com.demomavenpractice.Testngpracticee -->
+      </class> <!-- com.demomavenprojectpractice.com.demomavenpractice.TestNGXMLParameters -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

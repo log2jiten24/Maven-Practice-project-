@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Demo test">
+<suite name="Suite">
 
-<listeners>
-		<listener class-name="com.qa.ExtentReportListener.ExtentReportListener" />
-	</listeners>
 
-  <test thread-count="5" name="Web Page testing ">
+<parameter name="username" value="Admin"></parameter>
+<parameter name="password" value="admin123"></parameter>
+
+
+  <test thread-count="5" name="Test">
+  
     <classes>
-    
-      <class name="com.demomavenprojectpractice.com.demomavenpractice.Testngpracticee"/>
-      <class name="com.demomavenprojectpractice.com.demomavenpractice.Gradledemoclass"/>
-      <class name="com.demomavenprojectpractice.com.demomavenpractice.DropdownSortdown"/>
+      <class name="com.demomavenprojectpractice.com.demomavenpractice.TestNGXMLParameters"/>
       
     </classes>
   </test> <!-- Test -->

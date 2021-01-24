@@ -7,16 +7,17 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xssf.XLSBUnsupportedException;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-//import org.apache.tools.ant.util.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -41,9 +42,41 @@ import com.google.common.io.Files;
 public class Reusablefunctionss {
 	
 	public static WebDriver driver ;
+	
+	//create Object of the XLs_Reader class 
+	static Xls_Reader reader ;
+	
 	//public static ExtentReports report;
 	//public  static ExtentTest logger ;
-
+	
+	public static ArrayList<Object[]>  getTestDatafromExcel( ) {
+		
+		//creating array list having Object as data type ,this array list will contain Object array datatype 
+		ArrayList <Object[]> myData = new ArrayList <Object[]> ();
+		try {
+			//constructor initialized and give the path of the excel 
+			reader = new Xls_Reader ("F:\\TestData\\TestDataProvider.xlsx");
+			}catch (Exception e ) {
+			e.printStackTrace();
+		}
+		//start from second row 
+		for (int rowcount = 2 ; rowcount <= reader.getRowCount("Sheet2") ; rowcount ++  ) {
+			
+			String DepartingFrom = reader.getCellData("Sheet2", "Departing From", rowcount);
+			String ArrivnIN = reader.getCellData("Sheet2", "Arriving IN", rowcount);
+			String ArrivingOn = reader.getCellData("Sheet2", "Arriving On", rowcount);
+			String AirPref = reader.getCellData("Sheet2", "Airline Preference", rowcount);
+			
+			//create Object array and store all the values inside the array 
+			Object [] obj = {DepartingFrom , ArrivnIN ,ArrivingOn ,AirPref} ;
+			//add the elements at the arraylist 
+			myData.add(obj);
+		    	
+	}
+       //add return statement --return the arraylist having object array 
+		return myData ; 
+		
+	   }
 	public static void capturescreenshot (WebDriver driver ,String screenshotname)
 	{
 		try {
@@ -387,4 +420,8 @@ public class Reusablefunctionss {
 				}
 				
 			}
+			
+			
+			
+			
 }
